@@ -1,0 +1,14 @@
+<div class="main-container">
+  <nz-upload
+    nzType="drag"
+    [nzAction]="fileUploadUrl"
+    (nzChange)="handleChange($event)"
+    nzAccept="text/csv"
+  >
+    <p class="ant-upload-drag-icon">
+      <i nz-icon nzType="inbox"></i>
+    </p>
+    <p class="ant-upload-text">Click or drag file to this area to upload</p>
+    <p class="ant-upload-hint">Only CSV files are supported</p>
+  </nz-upload>
+</div>

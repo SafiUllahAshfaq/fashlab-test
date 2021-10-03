@@ -1,0 +1,50 @@
+<div class="main-container">
+  <div class="title">
+    <h2>Invoices</h2>
+  </div>
+  <div class="table">
+    <div class="refresh-btn">
+      <button nz-button nzType="default" (click)="refreshData()">
+        Refresh
+      </button>
+    </div>
+    <!-- <div class="header">
+      <span class="th" *ngFor="let header of headers">
+        {{ header }}
+      </span>
+    </div> -->
+
+    <!-- <div class="table-body">
+      <div
+        class="tr"
+        *ngFor="let invoice of invoices$ | async; index as i"
+        [ngClass]="{ 'row-bg': (i + 1) % 2 === 0 }"
+      >
+        <span class="td">{{ invoice.id }}</span>
+        <span class="td">{{ invoice.dueDate }}</span>
+        <span class="td">{{ invoice.createdAt }}</span>
+        <span class="td">{{ invoice.amount }}</span>
+        <span class="td">{{ invoice.sellingPrice }}</span>
+      </div>
+    </div> -->
+
+    <nz-table nzShowSizeChanger>
+      <thead>
+        <tr>
+          <th nzColumnKey="{header}" *ngFor="let header of headers">
+            {{ header }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let invoice of invoices$ | async">
+          <td>{{ invoice.id }}</td>
+          <td>{{ invoice.dueDate }}</td>
+          <td>{{ invoice.createdAt }}</td>
+          <td>{{ invoice.amount }}</td>
+          <td>{{ invoice.sellingPrice }}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
